@@ -60,13 +60,13 @@ class _BodyDrawer extends StatelessWidget {
     final badgeProvider = Provider.of<BadgeProvider>(context);
     final couponProvider = Provider.of<CouponProvider>(context);
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return ListView(
+      physics: const BouncingScrollPhysics(),
       children: [
         Center(
           child: Column(
             children: [
-              const SizedBox(height: 60,),
+              const SizedBox(height: 20,),
               Text(userProvider.user!.nombre, style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w400),),
               const SizedBox(height: 10,),
               Text(userProvider.user!.correo, style: const TextStyle(color: Colors.grey, fontSize: 13, fontWeight: FontWeight.bold),),

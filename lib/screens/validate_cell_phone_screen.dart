@@ -40,7 +40,7 @@ class ValidateCellPhoneScreen extends StatelessWidget {
                   child: Text('+593', style: TextStyle(fontSize: 13), textAlign: TextAlign.center,)
                 ),
                 SizedBox(
-                  width: 250,
+                  width: 230,
                   child: TextFormField(
                     controller: textController,
                     keyboardType: TextInputType.number,
@@ -66,9 +66,9 @@ class ValidateCellPhoneScreen extends StatelessWidget {
                 child: IconButton(
                   onPressed: () async {
                     textController.clear();
-                    Navigator.pushNamed(context, 'home');
+                    Navigator.pushReplacementNamed(context, 'home');
                     final badgeProvider = Provider.of<BadgeProvider>(context, listen: false);
-                    final BadgeModel badge = badgeProvider.usabilityBadges.where((element) => element.titulo == 'Telefono').first;
+                    final BadgeModel badge = badgeProvider.usabilityBadges.where((element) => element.titulo == 'Teléfono').first;
                     await badgeProvider.completedActivityUsability(context, badge.id);
                   },
                   icon: const Icon(Icons.arrow_forward_rounded),

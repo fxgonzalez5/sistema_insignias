@@ -31,12 +31,14 @@ class Badges2Screen extends StatelessWidget {
               runSpacing: 20,
               children: List.generate(
                 badgeProvider.usabilityBadges.length, 
-                (index) => _Badge(
-                  badgeProvider.usabilityBadges[index],
-                  (badgesEarned.isNotEmpty && (index < badgesEarned.length) && (badgeProvider.usabilityBadges[index].id == badgesEarned[index].id)) 
-                    ? true
-                    : false
-                )
+                (index)  {
+                  for (var badge in badgesEarned) {
+                    if (badgesEarned.isNotEmpty && (badgeProvider.usabilityBadges[index].id == badge.id)) {
+                      return _Badge(badgeProvider.usabilityBadges[index], true);
+                    }
+                  } 
+                  return _Badge(badgeProvider.usabilityBadges[index], false);
+                } 
               ),
             ),
           ),

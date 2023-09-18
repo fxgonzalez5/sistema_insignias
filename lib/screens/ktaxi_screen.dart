@@ -80,7 +80,7 @@ class _LocationInformation extends StatelessWidget {
         ElevatedButton(
           onPressed: () async {
             final badgeProvider = Provider.of<BadgeProvider>(context, listen: false);
-            final badge = badgeProvider.badges.where((element) => element.actividad!.nombre == 'Pedido de taxis').first;
+            final badge = badgeProvider.badges.where((element) => element.actividad!.nombre == 'Pedido de Taxis').first;
             await badgeProvider.updateProgresActivity(context, badge.actividad!);
           }, 
           style: ButtonStyle(

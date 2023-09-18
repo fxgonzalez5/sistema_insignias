@@ -58,7 +58,7 @@ class _CouponInput extends StatelessWidget {
         Icon(Icons.local_activity_outlined, color: Colors.blue[900],),
 
         SizedBox(
-          width: 225,
+          width: 200,
           child: TextFormField(
             initialValue: 'Ingresa un cupón...',
           )

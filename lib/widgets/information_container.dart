@@ -18,7 +18,7 @@ class InformationContainer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(
-            width: MediaQuery.of(context).size.width * 0.7,
+            width: MediaQuery.of(context).size.width * 0.65,
             child: Text(text, style: const TextStyle(color: Colors.grey),)
           ),
 

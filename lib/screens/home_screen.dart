@@ -104,7 +104,7 @@ class _Header extends StatelessWidget {
               '¿Qué necesitas hoy?',
               style: TextStyle(
                   color: Color(0xff2B3EE3),
-                  fontSize: 25,
+                  fontSize: 20,
                   fontWeight: FontWeight.w600),
             ),
           ],

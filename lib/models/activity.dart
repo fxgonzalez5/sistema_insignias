@@ -34,14 +34,12 @@ class Activity {
 
 class Register {
     final int id;
-    final bool estado;
     int progreso;
     final dynamic fechaCompletado;
     final User usuario;
 
     Register({
         required this.id,
-        required this.estado,
         required this.progreso,
         required this.fechaCompletado,
         required this.usuario,
@@ -49,7 +47,6 @@ class Register {
 
     factory Register.fromMap(Map<String, dynamic> json) => Register(
         id: json["id"],
-        estado: json["estado"],
         progreso: json["progreso"],
         fechaCompletado: json["fechaCompletado"],
         usuario: User.fromMap(json["usuario"]),
@@ -57,7 +54,6 @@ class Register {
 
     Map<String, dynamic> toMap() => {
         "id": id,
-        "estado": estado,
         "progreso": progreso,
         "fechaCompletado": fechaCompletado,
         "usuario": usuario.toMap(),

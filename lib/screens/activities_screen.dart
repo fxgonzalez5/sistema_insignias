@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -20,25 +22,21 @@ class ActivitiesScreen extends StatelessWidget {
           foregroundColor: Colors.black,
         ),
 
-      body: Column(
+      body: ListView(
+        physics: const BouncingScrollPhysics(),
         children: [
           const _ActivitiesProgress(),
-          Expanded(
-            child: ListView.builder(
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: badgeProvider.badges.length,
-              itemBuilder: (BuildContext context, int index) {
-                return _ActivityCard(
-                  index: index,
-                  name: badgeProvider.badges[index].actividad!.nombre,
-                  description: badgeProvider.badges[index].actividad!.descripcion,
-                  total: badgeProvider.badges[index].actividad!.total,
-                  progress: badgeProvider.badges[index].actividad!.registros[0].progreso,
-                  url: badgeProvider.badges[index].imagenUrl,
-                );
-              },
+
+          for (var index = 0; index < badgeProvider.badges.length; index++)
+            _ActivityCard(
+              index: index,
+              name: badgeProvider.badges[index].actividad!.nombre,
+              description: badgeProvider.badges[index].actividad!.descripcion,
+              total: badgeProvider.badges[index].actividad!.total,
+              progress: badgeProvider.badges[index].actividad!.registros[0].progreso,
+              url: badgeProvider.badges[index].imagenUrl,
             ),
-          ),
+            
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 10, horizontal: 50),
             child: Text('Las actividades se actualizarán según avances en las actuales; complétalas todas, obtén insignias y gana beneficios.', style: TextStyle(color: Colors.grey),),
@@ -138,7 +136,7 @@ class _ActivityCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                      width: 250,
+                      width: 200,
                       child: Text(name, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),)
                     ),
                     const SizedBox(height: 5,),
