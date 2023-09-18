@@ -107,7 +107,14 @@ class _BodyDrawer extends StatelessWidget {
               const Text('Cupones', style: TextStyle(fontWeight: FontWeight.w400),),
               const SizedBox(width: 10,),
               if (couponProvider.newCoupon)
-                Icon(Icons.info, color: Colors.blue[900],)
+                Container(
+                  padding: const EdgeInsets.all(2),
+                  decoration: BoxDecoration(
+                    color: Colors.blue[900],
+                    shape: BoxShape.circle
+                  ),
+                  child: const Icon(Icons.plus_one_rounded, color: Colors.white,)
+                )
             ],
           ),
           onTap: () {
@@ -122,7 +129,14 @@ class _BodyDrawer extends StatelessWidget {
               const Text('Insignias', style: TextStyle(fontWeight: FontWeight.w400),),
               const SizedBox(width: 10,),
               if (badgeProvider.newBadge)
-                Icon(Icons.info, color: Colors.blue[900],)
+                Container(
+                  padding: const EdgeInsets.all(2),
+                  decoration: BoxDecoration(
+                    color: Colors.blue[900],
+                    shape: BoxShape.circle
+                  ),
+                  child: const Icon(Icons.plus_one_rounded, color: Colors.white,)
+                )
             ],
           ),
           onTap: () { 
